@@ -1,0 +1,94 @@
+<!-- home/templates/home/success.html -->
+{% extends 'templates/base.html' %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Thank you for your inquiry!</h1>
+    <p>Your inquiry has been submitted successfully. Here are the details:</p>
+    <p>Employee Name: {{ inquiry.employee_name }}</p>
+    <p>Employee ID: {{ inquiry.employee_id }}</p>
+    <p>Question: {{ inquiry.question }}</p>
+    <p>Submitted at: {{ inquiry.submitted_at }}</p>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Success!</h1>
+    <p>Your inquiry has been submitted successfully.</p>
+
+    <!-- Example: Displaying inquiry details -->
+    <h2>Inquiry Details:</h2>
+    <ul>
+        <li><strong>Employee Name:</strong> {{ inquiry.employee_name }}</li>
+        <li><strong>Employee ID:</strong> {{ inquiry.employee_id }}</li>
+        <li><strong>Question:</strong> {{ inquiry.question }}</li>
+        <li><strong>Submitted At:</strong> {{ inquiry.submitted_at }}</li>
+    </ul>
+
+    <!-- Add additional content or redirection links as needed -->
+    <a href="{% url 'Home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %} {% endcomment %}
+
+
+{% comment %} <!-- home/templates/home/success.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Success!</h1>
+    <p>Your inquiry has been submitted successfully.</p>
+
+    <!-- Example: Displaying inquiry details -->
+    <h2>Inquiry Details:</h2>
+    <ul>
+        <li><strong>Employee Name:</strong> {{ inquiry.employee_name }}</li>
+        <li><strong>Employee ID:</strong> {{ inquiry.employee_id }}</li>
+        <li><strong>Question:</strong> {{ inquiry.question }}</li>
+        <li><strong>Submitted At:</strong> {{ inquiry.submitted_at }}</li>
+    </ul>
+
+    <!-- Add additional content or redirection links as needed -->
+    <a href="{% url 'Home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %} {% endcomment %}

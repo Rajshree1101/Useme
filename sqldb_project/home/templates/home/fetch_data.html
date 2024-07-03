@@ -1,0 +1,21 @@
+<!-- home/templates/home/fetch_data.html -->
+{% extends 'templates/base.html' %}
+
+{% block title %}Fetch Data{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Fetched Data</h1>
+    <p>Query: {{ query }}</p>
+
+    <!-- Display fetched data -->
+    <ul>
+        {% for row in data %}
+        <li>{{ row }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add additional content or redirection links as needed -->
+    <a href="{% url 'Home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}

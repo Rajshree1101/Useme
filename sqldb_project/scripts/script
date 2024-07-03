@@ -1,0 +1,5 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load the environment variables from .env file
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sqldb_project.settings')

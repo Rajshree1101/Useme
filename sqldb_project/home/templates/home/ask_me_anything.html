@@ -1,0 +1,276 @@
+<!-- home/templates/home/ask_me_anything.html -->
+{% extends 'templates/base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+{% comment %} <!-- home/templates/home/ask_me_anything.html -->
+{% extends 'templates/base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="submit_inquiry">
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <!-- Form for submitting new inquiry and querying existing data -->
+    <form method="post" action="{% url 'ask_me_anything' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        
+        <!-- Include a hidden input field to determine the action -->
+        <input type="hidden" id="action" name="action" value="submit_inquiry">
+
+        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+    </form>
+
+    <!-- Form for querying existing data -->
+    {% comment %} <form method="post" action="{% url 'ask_me_anything' %}" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="query" class="form-label">Enter Query</label>
+            <input type="text" class="form-control" id="query" name="query" required>
+        </div> {% endcomment %}
+
+        <!-- Include a hidden input field to determine the action -->
+        {% comment %} <input type="hidden" id="action" name="action" value="submit_query">
+
+        <button type="submit" class="btn btn-primary">Submit Query</button>
+    </form>
+
+    {% if results %}
+    <h2 class="mt-5">Search Results</h2>
+    <ul>
+        {% for result in results %}
+        <li>{{ result.question }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %} {% endcomment %} 
+
+
+{% comment %} <!-- home/templates/home/ask_me_anything.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <!-- Form for submitting new inquiry -->
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+    </form>
+
+    <!-- Form for querying existing data -->
+    <form method="post" action="{% url 'fetch_data' %}" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="query" class="form-label">Enter Query</label>
+            <input type="text" class="form-control" id="query" name="query" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Query</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+
+
+
+
+
+{% comment %} (Working) {% endcomment %}
+{% comment %} <!-- home/templates/home/ask_me_anything.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+
+{% comment %} <!-- home/templates/home/ask_me_anything.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <form method="post" action="{% url 'fetch_data' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="query" class="form-label">Enter Query</label>
+            <input type="text" class="form-control" id="query" name="query" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Query</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+
+{% comment %} <!-- home/templates/home/ask_me_anything.html -->
+{% comment %} {% extends 'base.html' %}
+
+{% block title %}Ask Me Anything{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Let's Get Started</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input type="text" class="form-control" id="employee_name" name="employee_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_id" class="form-label">Employee ID</label>
+            <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+        </div>
+        <div class="mb-3">
+            <label for="question" class="form-label">Ask Me Anything</label>
+            <textarea class="form-control" id="question" name="question" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %} {% endcomment %} 
+
+<!-- home/templates/home/ask_me_anything.html -->
